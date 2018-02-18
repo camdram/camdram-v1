@@ -1,0 +1,38 @@
+td.diaryevents {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	vertical-align: top;
+}
+
+.diary_venue {
+	font-style: italic;
+	text-align: right;
+	float: right;
+}
+
+.clear {
+       clear: both;
+       line-height: 0;
+       height: 0;
+}
+
+#beta-advert {
+    position:absolute;
+    top:8px;
+    right:0px;
+    width:230px;
+    height:61px;
+    background:#fe5c1f;
+    z-index:1000;
+    padding:0.6em 1em;
+    box-sizing:border-box;
+    color:white;
+    font-size:1.2em;
+    line-height:1.5em;
+}
+#beta-advert h4 {
+    margin:0;
+    font-size:1.1em;
+    position:initial;
+}

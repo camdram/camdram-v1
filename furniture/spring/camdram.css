@@ -1,0 +1,735 @@
+.vbutton {
+	 color: #0000ff;
+	 cursor: pointer;
+}
+
+form.title-edit-inplace a {
+		      font-size: 10px;
+		      font-weight: medium;
+}
+
+form.title-edit-inplace input.editor_field {
+			width: 50%;
+}
+
+form.content-edit-inplace textarea.editor_field {
+			width: 90%;
+			height: 500px;
+			font-family: monospace;
+}
+
+form.content-edit-inplace a {
+			  float: right;
+			  font-size: 10px;
+			  font-weight: medium;
+}
+
+body {
+	margin: 0px;
+	font-family: Tahoma, Arial;
+	color: #000000;
+	font-size: 12px;
+       background-repeat: no-repeat;
+       padding-bottom: 20px;
+}
+
+body.micro { 
+          
+             background-repeat: no-repeat;
+             background-position: top left;
+             padding-top: 20px;
+             padding-left: 10px;
+             padding-right: 10px;
+             padding-bottom: 20px;
+}
+
+div#ultraadvert { 
+                  position: absolute;
+                  display: block;
+                  right: 20px;
+                  top: 20px;
+                  font-size: 15px;
+                  background-color: #ff0000;
+                  
+                  color: #ffffff;
+                  padding: 3px;
+                  border: 2px solid #ff0000;
+}
+
+#ultraadvert a { 
+                color: #ddddff;
+                text-decoration: underline;
+}
+
+#body {
+	margin: 150px 10px 10px 10px;
+}
+
+#micronav { 
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 90%;
+            text-align: right;
+}
+
+#page {
+	width: 79%;
+}
+
+
+
+#toplinks {
+	position: absolute;
+            top: 115px;
+	right: 22%;
+        width: 78%;
+        overflow: hidden;
+        vertical-align: middle;
+        
+	z-index: 0;
+	color: white;
+	font-size: 14px;
+}
+
+#toplinks a {
+	color: white;
+}
+
+#toplinks div { 
+                padding: 5px;
+                margin-left: 2px;
+                left: 10px;
+                float: right;
+                width: 8em;
+                background-image: url(tab_cut.gif);
+                background-position: bottom left;
+                background-repeat: no-repeat;
+
+}
+
+#toplinks div.selected_toptab { 
+                                background-image: url(tab_cut.gif);
+}
+
+
+#toplinks div.toptab:hover, #toplinks div.ie-hover { 
+            background-image: url(tab_cut.gif);
+}
+
+#toplinks div span { 
+                     font-size: 10px;
+                     display: none;
+                     visibility: hidden;
+}
+
+#toplinks div:hover span, #toplinks div.ie-hover span { 
+                             display: inline;
+                             visibility: visible;
+                             text-decoration: none;
+}
+
+
+#account {
+           position: absolute;
+           background-color: #eeeeee;
+           font-size: 10px;
+           top: 95px;
+           width: 100%;
+           left: 0px;
+           z-index: 1;
+           border-bottom: 1px solid #dddddd;
+           color: #ffffff;
+           padding: 0px;
+}
+
+#account p {
+	color: #000000;
+	margin: 0;
+	padding:4px
+}
+
+
+#account a { 
+             font-weight: bold;
+             color: #000022;
+ }
+
+#copyright { 
+             position: relative;
+             top: 8px;
+             left: 4px;
+             font-size: 10px;
+             width: 90%
+}
+
+#rss {
+	position: absolute;
+	font-size: 10px;
+	top: 95px;
+	width: 49%;
+	left: 50%;
+	z-index: 1;
+       padding: 4px;
+}
+
+#rss a, #rss p {
+	color: black;
+	text-align: right;
+	margin: 0;
+}
+
+#admin {
+	position: absolute;
+	font-size: 10px;
+	top: 2px;
+	width: 50%;
+	left: 50%;
+	z-index: 1;
+}
+
+#admin a, #admin p {
+	color: white;
+	text-align: right;
+	margin: 0;
+}
+
+#help {
+	margin: 2px;
+	font-size: 10px;
+	left: 0;
+	z-index: 1;
+}
+
+#help a, #help p {
+	text-align: right;
+	margin: 0;
+}
+
+#navbox {
+	position: absolute;
+          float: right;
+	top: 115px;
+	right: 0px;
+        background-color: #aacbff;
+        padding-top: 3px;
+        padding-right: 5px;
+        padding-left: 3px;
+	width: 20%;
+        border-left: 1px dotted #ccc;
+        border-bottom: 1px dotted #ccc;
+}
+
+
+#thispage {
+
+	font-size: 16px;
+	font-weight: bold;
+	padding: 4px;
+	background-color: #aacbff;
+}
+
+#thispage p {
+	margin: 0;
+}
+
+#thispage p.parent {
+	font-size: 10px;
+}
+
+#navbar {
+
+	padding: 10px;
+	background-color: #aacbff;
+}
+
+#navbar ul {
+	list-style-image: url(arrowright.gif);
+	margin: 0;
+	padding: 0 0 0 1em;
+}
+
+#navbar li.navselected {
+        list-style-image: url(arrowright_selected.gif);
+	font-weight: bold;
+}
+
+#navbar li.navdropdownselected {
+	list-style-image: url(arrowdown.gif);
+	font-weight: bold;
+}
+
+#navbar li.navdropdown {
+	list-style-image: url(arrowdown.gif);
+}
+
+#navbar li.navboring {
+	list-style-image: none;
+	list-style-type: none;
+}
+
+#sidelinks p.modetitle {
+	font-weight: bold;
+}
+
+#sidelinks {
+
+	padding: 10px;
+	background-color: #aacbff;
+        border-top: 1px #778888 dotted;
+}
+
+#sidelinks ul {
+	list-style-image: url(arrowright.gif);
+	margin: 0;
+	padding: 0 0 0 1em;
+}
+
+#sidelinks li.modeselected {
+	font-weight: bold;
+}
+
+li.selected {
+	font-weight: bold;
+}
+
+#banner {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 95px;
+	background-color: #018eff;
+	cursor: pointer;
+	z-index: 0;
+          background-image: url(camdram.jpg);
+          background-repeat: no-repeat;
+}
+
+#logo {
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	width: auto;
+	height: auto;
+	white-space: nowrap;
+
+}
+
+.attention { 
+              color: #ff0000;
+}
+
+div.secretlayer { 
+                  z-index: 2;
+                  position: absolute;
+                  display: block;
+                  visibility: hidden;
+                  background-color: #ffffff;
+                  border: 10px solid #eeeeff;
+}
+
+select { 
+         z-index: 0;}
+
+table.editor { 
+             
+               
+}
+
+table.editor td { 
+                  padding-left: 5px;
+                  padding-right: 5px;
+                  background-color:#EEEEEE;
+}
+
+
+table.editor th { 
+                  padding-left: 5px;
+                  padding-right: 5px;
+                  text-align: right;
+                  vertical-align: top;
+                  font-weight: bold;
+                  background-color:#EEEEEE;
+                  }
+
+table.editor th em { 
+                     font-style: italic;
+                     font-weight: normal;}
+
+.smallgrey {
+	color: #222222;
+	font-size: 10px;
+}
+
+a:link {
+	color: #333377;
+	text-decoration: none;
+}
+
+a:visited {
+		color: #333377;
+		text-decoration: none;
+}
+
+a:active {
+		color: #01095A;
+		text-decoration: none;
+}
+
+
+a:hover {
+		color: #22225A;
+		text-decoration: underline;
+}
+
+td {
+	font-size: 12px;
+}
+
+tr {
+	font-size: 12px;
+}
+
+.keyword { 
+           font-weight: bold;
+}
+
+.keyword a { 
+              font-weight: bold;}
+
+.inputfeedback {
+	background-color : #F0EEEE;
+	color: #110000;
+	width: 90%;
+	padding: 10px;
+	border: groove #990000;
+}
+
+.maindiary
+	{
+	background-color: #ddddff;
+	}
+
+td.diaryevents
+	{
+	background-color: #ddddff;
+	}
+
+.diary {
+         width: 100%;
+         color: #FFFFFF;
+         background-color:  #006aff;
+         padding-top: 3px;
+         padding-bottom: 3px;
+         
+}
+
+
+td.diaryevents div { 
+                     border-bottom: 1px dashed #D1D1D1;
+              
+}
+td.diaryevents div.applications { 
+       background-color: #ffdddd;
+                                 
+}
+
+td.diaryevents div.applications a:link, td.diarevents div.applications a:visited { 
+                                         color: #f00; }
+
+td.diaryevents div.applications a:hover { 
+                                          color: #e00; }
+
+
+td.diaryevents div.applications:hover { 
+                                        background-color: #ffcccc;
+}
+td.diaryevents div.show { 
+        background-color: #aacbff;
+}
+
+span.editme { 
+              float: right;}
+span.editme a img { 
+                 border:0 ;}
+
+td.diaryevents div.show:hover { 
+                                background-color: #ccccff;
+                                }       
+td.diaryevents div.event { 
+         background-color: #ddffdd;}
+
+td.diaryevents div.event:hover { 
+                                 background-color: #ccffcc;}
+.diaryevents {
+	font-size: 10px;
+               background-color: #eeeeee;
+        border-top: 1px solid #D1D1D1;
+       
+}
+.separate {
+	margin: 0px;
+	padding: 0px;
+	width: 10px;
+	background-color: #FFFFFF;
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #000000;
+
+}
+.separatetop {
+	margin: 0px;
+	padding: 0px;
+	width: 10px;
+	background-color: #FFFFFF;
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-left-color: #000000;
+
+}
+
+.todayheader {
+	background-color: #006ab2;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.dayheader {
+	background-color: #ffffff;
+	color: #006ab2;
+}
+
+a.confirmable {
+	color : #ff0000;
+}
+
+.menuframe {
+	overflow: visible;
+	position: absolute;
+	visibility: visible;
+	height: auto;
+	width: auto;
+	right: 10px;
+	font-weight: bolder;
+	border: thin solid #000000;
+	margin: 10px;
+	padding: 5px;
+	float: none;
+
+}
+.menucell {
+	background-color: #01095A;
+	color: #FFFFFF;
+	white-space: nowrap;
+	padding: 1px;
+}
+.menucell a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+}
+.menucellselected {
+	background-color: #84b9ff;
+	font-weight: bold;
+	color: #000000;
+	white-space: nowrap;
+	padding: 1px;
+}
+.menucellselected a:hover {
+		color: #000000;
+		text-decoration: underline;
+}
+.menucellgroup {
+	background-color: #01095A;
+	font-weight: bold;
+	color: #FFFFFF;
+	white-space: nowrap;
+	padding: 1px;
+}
+.menucellgroup a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+}
+
+.menucelllk {
+	color: #ffffff;
+}
+.menucellselectedlk {
+	color: #000000;
+}
+.menucellgrouplk {
+	color: #ffffff;
+}
+.smallentry {
+	font-size: 8pt;
+}
+.overlaytop {
+	position: absolute;
+	right: 5px;
+	width: 100%;
+}
+
+div.overlaytop .smallgrey {
+	color: #ffffff;
+	font-size: 10px;
+}
+
+h4 { 
+     font-size: 13px;
+     font-weight: bold;
+     position: relative;
+     left: -5px;
+}
+
+h5 { 
+     font-size: 12px;
+     font-weight: bold;
+    
+}
+
+h3 {
+	font-size: 14px;
+	font-weight: bold;
+     clear: both;
+     position: relative;
+     left: -10px;
+     background-color: #dddddd;
+     padding-left: 4px;
+}
+
+div.boxed h3 { 
+         left: 0px;
+}
+
+h3.noborder {
+	font-size: 14px;
+	font-weight: bold;
+	border: none;
+	clear: both;
+}
+
+.h3text {
+        font-size: 14px;
+        font-weight: bold;
+}
+
+h2 { 
+     font-size: 16px;
+     padding-left: 4px;
+     position: relative;
+     left: -10px;
+     background-color: #cccccc;
+    
+}
+h3 div.headerbuttons {
+	text-align: right;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.byline {
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.timeplace {
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.society {
+	font-size: 10px;
+	font-weight: normal;
+}
+
+
+table.dataview { 
+                 border: 1px solid #ccccdd;
+                 background-color: #ddddee;
+                 padding: 0px;
+                 border-spacing: 0px;
+                
+}
+
+table.dataview tr td { 
+                    padding: 2px;
+                   
+                     background-color: #eeeeff;
+                    
+}
+
+span.kbred {
+		background-color: red;
+}
+
+span.kbgreen {
+		background-color: green;
+}
+
+
+div.boxed {
+		border-top: 1px solid #778888;
+		border-left: 1px solid #778888;
+		border-right: 2px solid #778888;
+		border-bottom: 2px solid #778888;
+            background: #EEEEEE;
+		padding: 8px;
+		margin: 2px;
+}
+
+div.frontpageboxed {
+		border: 1px solid #9a9ac4;
+		padding: 10px;
+		margin: 2px;
+		background-color: #eeeeff;
+}
+
+.frontpageheading {   
+		font-size: 14px;
+		font-weight: bold;
+		border-bottom: 1px solid #9a9ac4;
+		margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: -1px;
+                padding-left: 1px;
+}
+
+.frontpageheading a {
+		color: black;
+}
+
+span.hide { font-weight: bold;
+           color: #ff0000; 
+            z-index: 1;
+            cursor: pointer;
+            }
+
+span.hide div { 
+               
+                display: none;
+                visibility:hidden; 
+                 z-index: 1;
+              
+               
+                
+                }
+
+span.distress { 
+                color: #ff0000;
+               text-decoration: blink;
+}
+
+span.hide:hover div {
+
+                      display: block;
+                        position: absolute;
+                         background: #eeeeee;
+                        color: #000000;
+                       font-size: 10px;
+                        visibility:visible;
+                         z-index: 1;
+                       }

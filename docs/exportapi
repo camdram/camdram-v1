@@ -1,0 +1,283 @@
+Camdram.net XML-RPC intimescale      : structterface API
+=================================
+
+Preamble
+--------
+
+All Camdram objects have a unique ID (UID). This is a string to allow future expansion. Camdram
+guarantees that the UID of an object is unique and will not change during the lifetime of
+camdram.net. There is no standard form for the UID string and it should not be parsed by a client.
+(Footnote: I suggest initially using "show612", "society12", and so on.)
+
+camdram.*.*.get methods are the common way of getting information. Most take an "include_full" argument, allowing expensive (eg. show description) data to be transferred only if it's required. Including this in the .get method allows it to be queried for immediately (eg. forthcoming shows) or only when the user registers interest (eg. diary).
+
+! represents essential parameters. Everything else is optional.
+
+Certain methods require access privileges on camdram.net. For this, you should wait for someone
+to decide to actually implement this. Until then, life sucks. These non-implemented methods are
+bracketed below.
+
+Structs
+-------
+
+EVENT_ARRAY
+-----------
+
+Array of events, plus total number of events in array if not all returned
+
+events        : array(EVENT_CONTAINER)
+total         : int
+
+EVENT_CONTAINER
+---------------
+
+Container type for all camdram generic events.
+
+type           : string           : should be "show", "event", "audition", "application". Clients should handle unknown types gracefully.
+data           : struct           : struct of data type SHOW, EVENT, AUDITION, APPLICATION.
+
+SHOW
+----
+
+MUST CONTAIN:
+
+uid            : string           : Unique ID.
+title          : string           : Show Title.
+society        : string           : Funding society UID
+society_name   : string           : Funding society human-readable name
+is_authorized  : boolean          : TRUE if show has been authorized, FALSE otherwise
+category       : string           : should be "drama", "comedy", "musical", "dance", "other". Clients should handle unknown types gracefully.
+url            : string           : Fully qualified camdram URL of show (http)
+times          : array(CAMDRAM_TIME): Shall not contain endtime.
+has_audition   : boolean
+has_techie_advert : boolean
+has_core_advert: boolean
+
+MAY CONTAIN:
+
+author         : string           : Author           
+prices         : string           : Prices (freeform string)
+image_url      : string           : Fully qualified URL of show logo (http)
+venue          : string           : Venue (UID)
+venue_name     : string           : Venue human-readable name
+adct_ref       : int              : ADC Theatre online booking reference
+description    : string           : Description/Blurb (if include_full = true)
+people         : array (SHOW_ROLE): The entire production team. Includes people.
+
+EVENT
+-----
+
+MUST CONTAIN:
+
+uid            : string           : UID
+title          : string
+url            : string           : Fully qualified camdram URL of event (http)
+society        : string           : Society UID
+society_name   : string           : Society human-readable name
+time           : CAMDRAM_TIME       : shall contain start, starttime, endtime
+
+MAY CONTAIN:
+
+description    : string           : Description (if include_full = true)
+
+AUDITION
+--------
+
+MUST CONTAIN
+
+show           : string (uid)
+location       : string
+url            : string           : Fully qualified camdram URL of audition (http)
+
+MAY CONTAIN
+
+times          : array(CAMDRAM_TIME): shall contain start, starttime, endtime
+description    : string           : (If include_full = true)
+
+APPLICATION
+-----------
+
+MUST CONTAIN
+
+society        : string (uid)
+society_name   : string           : Society human-readable name
+info           : string
+deadline       : CAMDRAM_TIME      :
+url            : string            : camdram URL of this advert (http)
+
+MAY CONTATIN
+description    : string
+
+TECHIES_ADVERT
+--------------
+
+MUST CONTAIN
+
+show           : string (uid)
+positions      : string
+contact        : string
+deadline       : CAMDRAM_TIME 
+url            : string            : camdram URL of this advert (http)
+
+MAY CONTAIN
+
+description    : string            : the bit that makes it sound not-a-stitch-up
+
+CORE_ADVERT
+-----------
+
+MUST CONTAIN
+
+show           : string (uid)
+deadline       : CAMDRAM_TIME 
+url            : string            : camdram URL of this advert (http)
+
+MAY CONTAIN
+
+description    : string
+
+SOCIETY
+-------
+
+MUST CONTAIN
+
+uid             : string
+name            : string
+shortname       : string
+url             : string           : Fully qualified camdram URL of show (http)
+has_application : boolean
+acts_affiliated : boolean
+
+MAY CONTAIN
+
+college         : string
+description     : string (if include_full = true)
+image_url       : string           : Fully qualified URL of society logo (http)
+
+SHOW_ROLE
+---------
+
+MUST CONTAIN:
+
+show           : SHOW             : Show
+role           : string           : Role person had in show
+section        : string           : should be "cast", "production", "band". Clients should handle unknown types gracefully.
+
+MAY CONTAIN:
+
+people         : array (PERSON)   : Array of people who had this role in this show. Does not contain shows_roles.
+
+PERSON
+------
+
+MUST CONTAIN:
+
+uid            : string           : Unique ID
+name           : string           : Name
+
+MAY CONTAIN:
+
+shows_roles    : array(show_role) : Shows person has been involved in. Does not include people.
+
+TIMESCALE
+---------
+
+A way of specifying a timescale of shows
+
+MUST CONTAIN:
+
+comparison1    : string           : "BEFORE", "AFTER"
+date1type      : string           : "STARTDATE", "ENDDATE", "ANYDATE"
+date1          : dateTime.iso8601
+
+MAY CONTAIN:
+
+comparison2    : string           : "BEFORE", "AFTER"
+date2type      : string           : "STARTDATE", "ENDDATE", "ANYDATE"
+date2          : dateTime.iso8601
+
+CAMDRAM_TIME
+--------
+
+MUST CONTAIN
+
+startdate      : dateTime.iso8601 : only date component important
+starttime      : dateTime.iso8601 : only time component important
+
+MAY CONTAIN
+
+exclude        : dateTime.iso8601 : only date component important
+enddate        : dateTime.iso8601 : only date component important
+endtime        : dateTime.iso8601 : only time component important
+
+EVENT_QUERY
+---------
+Object to pass as a query to the server
+
+MAY CONTAIN
+
+uid	       : string
+soc            : string           : Society name or UID
+types          : int
+timescale      : struct           : TIMESCALE
+title          : string
+author         : string
+category       : string
+venue          : string           : Venue name or UID
+has_audition   : boolean
+has_coreadvert : boolean
+has_techadvert : boolean
+
+* types = Boolean OR of what types to return.
+-- Show = 1
+-- Event = 2
+-- Audition = 4
+-- Application = 8
+* Parameters are ANDed together. We can make a different method of doing OR comparisons if it's required - but AND is the most common use case by far.
+* Title/author/category are the right hand side of a mysql LIKE comparison
+* Include_full includes certain expensive bits of data, like show description
+* Max return is maximum number of results to return
+* Start is for use with max return if you're getting the results in a page-like fashion. If max_return was 30, your second page will begin with start=31.
+
+
+Methods
+-------
+
+STRING (camdram.auth.login)
+VOID (camdram.auth.logout)
+BOOLEAN (camdram.auth.hasEquivalentToken)
+
+VOID (camdram.events.add)
+EVENT_ARRAY camdram.events.get (EVENT_QUERY query, include_full, max_return, start)
+VOID (camdram.events.delete)
+VOID (camdram.events.update)
+
+TECHIES_ADVERT camdram.events.show.getTechiesAdvert (showid)
+VOID (camdram.events.show.updateTechiesAdvert)
+AUDITION camdram.events.show.getAudition (showid)
+VOID (camdram.events.show.updateAudition)
+CORE_ADVERT camdram.events.show.getCoreAdvert (showid)
+VOID (camdram.events.show.updateCoreAdvert)
+VOID (camdram.events.show.deleteImage)
+VOID (camdram.events.show.updateImage)
+
+SOCIETY camdram.society.get (string uid, string name, include_full) -- Should this a) return an array of societies and b) pass a SOCIETY_QUERY struct? -JMD
+* Parameters are ANDed together. But seriously, just use one.
+* Name is the right hand side of a MySQL "LIKE" clause
+VOID (camdram.society.update)
+APPLICATION camdram.society.getApplicationAdvert
+VOID (camdram.society.updateApplicationAdvert)
+VOID (camdram.society.deleteImage)
+VOID (camdram.society.updateImage)
+
+PERSON camdram.person.get (string personid, string name, boolean include_full) -- Should this a) return an array of societies and b) pass a PERSON_QUERY struct? -JMD
+* Parameters are ANDed together. But seriously, just use one.
+* Name is the right hand side of a MySQL "LIKE" clause
+* If include_full is included, you get shows_roles.
+
+--- between these marker's is jmd's responsibility, as he understands stores... ---
+camdram.stores.get
+camdram.stores.getItemList
+
+He does, but he doesn't quite know what CUADC want...
+--- end magic marker ---

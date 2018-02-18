@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+	<infoitem key="UD_menu" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+	<infoitem key="UD_currentmenuitem" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+	<infoitem key="UD_submenu" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+	<infoitem key="UD_backtrace" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+	<infoitem key="UD_retmenu" value="name:id;datatype:int,name:title;datatype:blob,name:parentid;datatype:int,name:sortcode;datatype:int" />
+</info>

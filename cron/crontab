@@ -1,0 +1,5 @@
+0 * * * * /societies/acts/public_html/cron/hourly.sh
+1 4 * * * /societies/acts/public_html/cron/daily.sh
+2 4 * * 1 /societies/acts/public_html/cron/weekly.sh
+3 4 1 * * /societies/acts/public_html/cron/monthly.sh
+4 4 1 1 * /societies/acts/public_html/cron/annually.sh

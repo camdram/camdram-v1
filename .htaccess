@@ -1,0 +1,20 @@
+#ErrorDocument 403 /errorpages/access.html
+#Order Deny,Allow
+#Deny from all
+#Allow from 193.60.90.61
+#Allow from 80.68.93.172
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^$ /index.php [last]
+
+# Handle request for iCalendars
+# Match an academic year and society name
+RewriteRule ^ical/([0-9]{2,4})-([0-9]{2,4})/([A-Za-z]+[A-Za-z-]*)/?$ icalendar.php?start_year=$1&society=$3 [NC,L]
+RewriteRule ^ical/([0-9]{2,4})-([0-9]{2,4})/?$ icalendar.php?start_year=$1 [NC,L] # Match just the year
+RewriteRule ^ical/([A-Za-z]+[A-Za-z-]*)/?$ icalendar.php?society=$1 [NC,L] # Just the society name
+RewriteRule ^ical/?$ icalendar.php [NC,L] #  Default to current academic year
+
+# Default URL handler
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule !rewriter.php /rewriter.php

@@ -1,0 +1,31 @@
+FIXME: Add a thing explaining tokens
+
+Restricting access to pages
+---------------------------
+
+Restricting access to pages can be done in the database:
+
+* To restrict to logged in users only: set the "secure" field to 1.
+* To restrict to a particular group of users:
+
+Add code to the "access_php" field in the database that returns "true" if access is granted.
+
+Examples: 
+to restrict a page to administrators: access_php = "return hasEquivalentToken ('security', -1);"
+to restrict a page to show owners: access_php = "return hasEquivalentToken ('show', 0);"
+
+If (access_php != ""), "secure" is implied. ie. users will be asked to log in before access_php is evaluated.
+
+Restrictions set in place using "secure" and "access_php" propagate to children - for a page to be accessed,
+the user must have appropriate tokens to fulfill the requirements of the page they are trying to view and all
+of its parents. This should make it easier to add subpages without knocking holes in camdram's security model.
+
+---
+
+NB.
+
+* These settings restrict who can access your page. You should still check people have permissions to perform any
+action on the database before committing that action.
+* In previous incarnations of camdram, pages had to individually evaluate their security requirements. Some pages
+still do this. Please don't do this in new code; old pages should gradually be moved to having their access requirements
+in the database wherever possible. (Apart from anything else, it keeps the menu working.)

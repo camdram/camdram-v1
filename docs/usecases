@@ -1,0 +1,57 @@
+"Use cases" can roughly be interpreted as "Pages"
+
+XML-RPC USE CASE 1: "Coming Soon" shows page
+
+1. Client queries server for shows matching society, in a certain date range, sorted by start date
+2. Server returns number of shows this matches, and basic details on all of them
+3. Client sends individual queries for each show to expand details on each show. Ideally this uses system.multicall
+4. Server returns these details.
+5. Client displays all of these shows in order.
+
+XML-RPC USE CASE 2: Archives Index
+1. Client queries server for shows matching user query (which by default is all shows in past), specifying number to
+display and the offset to start from.
+2. Server returns number of shows this matches, and basic details on the specified number of them, starting from the
+specified offset
+3. Client displays this basic information on the specified number of shows (with a link to display more detail), and
+uses the displayed number, offset and total number to display page navigation.
+
+XML-RPC USE CASE 3: Archives Detail
+
+1. Client queries server for expanded informaion for specified show
+2. Server returns expanded information, including list of people involved in show.
+3. Client displays this expanded information, with links to expand each person, and society.
+
+XML-RPC USE CASE 4: Archives People
+
+1. Client queries server for list of shows a specified person was involved in
+2. Server returns basic info on shows specified person was involved in
+3. Client displays this info, with a link to expand each show.
+
+XML-RPC USE CASE 5: Society detail
+
+1. Client queries server for details on specified society
+2. Server returns info on specified society.
+3. Client displays this info.
+
+XML-RPC USE CASE 6: Diary
+
+Needs thinking about...
+
+XML-RPC USE CASE 7: Stores
+
+Also needs thinking about, need to find out from cuadc what they want.
+
+XML-RPC USE CASE 8: Auditions/Tech Adverts/Application Adverts Index
+
+1. Client queries server for basic details on shows with auditions/tech adverts/applications adverts
+2. Server returns basic details on these shows
+3. Client queries server for auditions details/tech details/application adverts for each show.
+4. Server returns auditions details for each show
+5. Client displays this information, with a link for further information
+
+XML-RPC USE CASE 9: Auditions/Tech Adverts/Application Adverts Detail
+1. Client queries server for full details on specified show, with auditions details/tech details/application adverts
+detail.
+2. Server returns full info including advert details
+3. Client displays this information.
